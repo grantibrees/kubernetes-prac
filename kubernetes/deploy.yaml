@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: learninggrp
+    labels:
+        app: kubepractice
+spec:
+  replicas: 2
+  selector:
+    matchLebels:
+      app: kubepractice
+    template:
+      metadata:
+        labels:
+          app: kubepractice
+      spec:
+        containers:
+          - image: //GET FROM AWS
+            name: kubepractice
+            ports:
+              - containerPort: 8080
